@@ -37,5 +37,5 @@ async def get_books():
 @app.get("/books/{title}")
 async def get_book_by_title(title: str):
     for book in books:
-        if book["title"] == title:
+        if book["title"].casefold() == title.casefold():
             return book
